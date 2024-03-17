@@ -1,18 +1,23 @@
 package javaClass;
 import javax.persistence.*;
 
+enum Genre {
+    MASCULIN, FEMININ, AUTRE
+}
+
 @Entity
 @Table(name = "Utilisateur")
 public class Utilisateur {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long codeUtilisateur;
     private String pseudo;
     private String mdp;
     private int age;
+
     @Enumerated(EnumType.STRING)   // 0: "masculin", 1: "feminin", 2: "autre"
-    private String genre;
+    private Genre genre;
     private boolean connecte;
     private boolean enPartie;
     private int nbrVictoire;
@@ -24,7 +29,7 @@ public class Utilisateur {
     // Constructeurs
     public Utilisateur() { }
 
-    public Utilisateur(String pseudo, String mdp, int age, String genre, boolean connecte, boolean enPartie,
+    public Utilisateur(String pseudo, String mdp, int age, Genre genre, boolean connecte, boolean enPartie,
                        int nbrVictoire, double scoreMoy, double ratioClicsReussis, double ratioClicsRapides,
                        int nbrClicsPlusRapides) {
         this.pseudo = pseudo;
@@ -41,11 +46,11 @@ public class Utilisateur {
     }
 
     // Getters
-    public long getId() { return id; }
+    public long getCodeUtilisateur() { return codeUtilisateur; }
     public String getPseudo() { return pseudo; }
     public String getMdp() { return mdp; }
     public int getAge() { return age; }
-    public String getGenre() { return genre; }
+    public Genre getGenre() { return genre; }
     public boolean isConnecte() { return connecte; }
     public boolean isEnPartie() { return enPartie; }
     public int getNbrVictoire() { return nbrVictoire; }
@@ -58,7 +63,7 @@ public class Utilisateur {
     public void setPseudo(String pseudo) { this.pseudo = pseudo; }
     public void setMdp(String mdp) { this.mdp = mdp; }
     public void setAge(int age) { this.age = age; }
-    public void setGenre(String genre) { this.genre = genre; }
+    public void setGenre(Genre genre) { this.genre = genre; }
     public void setConnecte(boolean connecte) { this.connecte = connecte; }
     public void setEnPartie(boolean enPartie) { this.enPartie = enPartie; }
     public void setNbrVictoire(int nbrVictoire) { this.nbrVictoire = nbrVictoire; }

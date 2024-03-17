@@ -7,8 +7,14 @@ public class JoueurPartie {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long codeJoueurPartie;
+
+    @ManyToOne
+    @JoinColumn(name = "codeJoueur")
     private Utilisateur joueur;
+
+    @ManyToOne
+    @JoinColumn(name = "codePartie")
     private Partie partie;
     private int score;
 
@@ -22,7 +28,7 @@ public class JoueurPartie {
     }
 
     // Getters
-    public long getId() { return id; }
+    public long getCodeJoueurPartie() { return codeJoueurPartie; }
     public Utilisateur getJoueur() { return joueur; }
     public Partie getPartie() { return partie; }
     public int getScore() { return score; }

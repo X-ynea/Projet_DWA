@@ -7,7 +7,7 @@ public class Carte {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long codeCarte;
     private String couleur;
     private String forme;
 
@@ -20,7 +20,7 @@ public class Carte {
     }
 
     // Getters
-    public long getId() { return id; }
+    public long getCodeCarte() { return codeCarte; }
     public String getCouleur() { return couleur; }
     public String getForme() { return forme; }
 

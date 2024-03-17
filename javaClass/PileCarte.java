@@ -7,9 +7,18 @@ public class PileCarte {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long codePileCarte;
+
+    @ManyToOne
+    @JoinColumn(name = "codePartie")
     private Partie partie;
+
+    @ManyToOne
+    @JoinColumn(name = "codeCarte")
     private Carte carte;
+
+    @OneToOne
+    @JoinColumn(name = "codeJoueur")
     private Utilisateur joueur;
     private int posTour;
 
@@ -24,7 +33,7 @@ public class PileCarte {
     }
 
     // Getters
-    public long getId() { return id; }
+    public long getCodePileCarte() { return codePileCarte; }
     public Partie getPartie() { return partie; }
     public Carte getCarte() { return carte; }
     public Utilisateur getJoueur() { return joueur; }

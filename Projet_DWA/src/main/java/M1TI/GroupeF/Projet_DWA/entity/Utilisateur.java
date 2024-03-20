@@ -15,7 +15,8 @@ enum Genre {
 @NoArgsConstructor
 @Entity
 @Table(name = "Utilisateur")
-public class Utilisateur {
+@Inheritance(strategy=InheritanceType.JOINED)
+abstract class Utilisateur {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

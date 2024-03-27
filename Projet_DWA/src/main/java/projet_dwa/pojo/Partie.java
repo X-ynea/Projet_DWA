@@ -1,7 +1,19 @@
 package projet_dwa.pojo;
 
 import java.util.List;
-import jakarta.persistence.*;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 enum Difficulte {
     SIMPLE, DIFFICILE
@@ -22,14 +34,18 @@ public class Partie {
     @JoinColumn(name = "createur")
     private Utilisateur createur;
 
-    @OneToMany(mappedBy = "partie", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "partie_id", cascade = CascadeType.ALL)
     private List<Joueur> joueurs;
     
     // Paramètres de création de la partie
 
+    @Column(name="nbrCouleur")
     private int nbrCouleur;
+    @Column(name="nbrNombre")
     private int nbrNombre;
+    @Column(name="timer")
     private int timer;
+    @Column(name="nbrTour")
     private int nbrTour;
 
     @Enumerated(EnumType.STRING)  // 0: "simple", 1: "difficile"
@@ -38,7 +54,9 @@ public class Partie {
     @Enumerated(EnumType.STRING)  // 0: "en_attente", 1: "en_cours", 2: "terminee"
     private Statut statut;
 
+    @Column(name="total_clics_reussis")
     private int totalClicsReussis;
+    @Column(name="total_clics_rapide")
     private int totalClicsRapides;
 
     

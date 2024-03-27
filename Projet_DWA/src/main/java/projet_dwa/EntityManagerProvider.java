@@ -1,6 +1,8 @@
 package projet_dwa;
 
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public final class EntityManagerProvider {
 

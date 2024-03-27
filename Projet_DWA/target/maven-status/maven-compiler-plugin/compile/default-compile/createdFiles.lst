@@ -1,0 +1,17 @@
+projet_dwa\dao\DAOException.class
+projet_dwa\EntityManagerProvider.class
+projet_dwa\pojo\Statut.class
+projet_dwa\dao\jpa\DAO_JPA_Partie.class
+projet_dwa\pojo\Partie.class
+projet_dwa\pojo\Genre.class
+projet_dwa\pojo\Difficulte.class
+projet_dwa\dao\DAO.class
+projet_dwa\Main.class
+projet_dwa\dao\jpa\DAO_JPA_Utilisateur.class
+projet_dwa\pojo\Utilisateur.class
+projet_dwa\dao\DAOFactory.class
+projet_dwa\dao\AbstractDAOFactory.class
+projet_dwa\dao\jpa\JPA_DAO_Factory.class
+projet_dwa\dao\PersistenceKind.class
+projet_dwa\dao\jpa\DAO_JPA_Joueur.class
+projet_dwa\pojo\Joueur.class

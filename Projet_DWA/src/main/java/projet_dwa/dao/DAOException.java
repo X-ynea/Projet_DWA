@@ -1,6 +1,6 @@
 package projet_dwa.dao;
 
-// Specific exception for data access problems via a DAO
+// Classe qui gère les exeptions
 public class DAOException extends Exception {
 
     public DAOException() {

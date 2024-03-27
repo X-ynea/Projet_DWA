@@ -15,13 +15,13 @@ public class DAO_JPA_Joueur extends DAO<Joueur> {
   private final EntityManager entityManager;
 
 
-  // ------- CONSTRUCTOR -------
+  // ------- Constructeur -------
   public DAO_JPA_Joueur() throws DAOException {
     this.entityManager = EntityManagerProvider.getInstance();
   }
 
 
-  // ------- CRUD METHODS -------
+  // ------- Méthodes CRUD ------- 
   @Override
   public Joueur findById(int id) throws DAOException {
     return entityManager.find(Joueur.class, new BigDecimal(id));

@@ -9,21 +9,21 @@ public final class EntityManagerProvider {
   private static EntityManager instance;
   private static EntityManagerFactory factory;
 
-  // Get the entity manager
+  // Get entity manager
   public static EntityManager getInstance() {
-    // If the factory is not created, create it
+    // Création de la factory
     if (factory == null) {
       factory = Persistence.createEntityManagerFactory("default");
     }
 
-    // If the entity manager is not created, create it
+    // Création de l'entity manager
     if (instance == null) {
       instance = factory.createEntityManager();
     }
     return instance;
   }
 
-  // Close the entity manager and the factory
+  // Fermer entity manager et factory
   public static void close() {
     if (instance.isOpen()) instance.close();
     if (factory.isOpen()) factory.close();

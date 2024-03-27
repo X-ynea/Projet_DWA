@@ -25,7 +25,7 @@ enum Difficulte {
 @Entity
 @Table(name = "partie")
 public class Partie {
-    // Attributs
+    // Attributs 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codePartie;
@@ -53,6 +53,8 @@ public class Partie {
 
     @Enumerated(EnumType.STRING)  // 0: "en_attente", 1: "en_cours", 2: "terminee"
     private Statut statut;
+
+    // Statistiques d'une partie
 
     @Column(name="total_clics_reussis")
     private int totalClicsReussis;
@@ -150,6 +152,16 @@ public class Partie {
         this.statut = statut;
         this.totalClicsReussis = totalClicsReussis;
         this.totalClicsRapides = totalClicsRapides;
+    }
+
+    // To string
+
+    @Override
+    public String toString() {
+        return "Partie [codePartie=" + codePartie + ", createur=" + createur + ", joueurs=" + joueurs + ", nbrCouleur="
+                + nbrCouleur + ", nbrNombre=" + nbrNombre + ", timer=" + timer + ", nbrTour=" + nbrTour
+                + ", difficulte=" + difficulte + ", statut=" + statut + ", totalClicsReussis=" + totalClicsReussis
+                + ", totalClicsRapides=" + totalClicsRapides + "]";
     }
 
 

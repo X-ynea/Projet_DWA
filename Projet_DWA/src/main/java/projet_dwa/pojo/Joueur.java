@@ -13,12 +13,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "joueur")
 public class Joueur{
+
+    // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "score_partie")
-    private int scorePartie;
+    private int score_partie;
 
     @OneToOne
     @JoinColumn(name = "utilisateur_id")
@@ -38,11 +40,11 @@ public class Joueur{
     }
 
     public int getScorePartie() {
-        return scorePartie;
+        return score_partie;
     }
 
     public void setScorePartie(int scorePartie) {
-        this.scorePartie = scorePartie;
+        this.score_partie = scorePartie;
     }
 
     public Utilisateur getUtilisateur_id() {
@@ -66,15 +68,22 @@ public class Joueur{
     public Joueur() {
     }
 
-    public Joueur(long id, int scorePartie, Utilisateur utilisateur_id, Partie partie_id) {
+    public Joueur(long id, int score_partie, Utilisateur utilisateur_id, Partie partie_id) {
         this.id = id;
-        this.scorePartie = scorePartie;
+        this.score_partie = score_partie;
         this.utilisateur_id = utilisateur_id;
         this.partie_id = partie_id;
     }
 
     public Joueur(long id) {
         this.id = id;
+    }
+
+    // To string 
+    @Override
+    public String toString() {
+        return "Joueur [id=" + id + ", score_partie=" + score_partie + ", utilisateur_id=" + utilisateur_id
+                + ", partie_id=" + partie_id + "]";
     }
 
     

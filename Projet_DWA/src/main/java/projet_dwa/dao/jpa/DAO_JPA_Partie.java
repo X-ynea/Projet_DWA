@@ -15,13 +15,13 @@ public class DAO_JPA_Partie extends DAO<Partie> {
   private final EntityManager entityManager;
 
 
-  // ------- CONSTRUCTOR -------
+  // ------- Constructeur -------
   public DAO_JPA_Partie() throws DAOException {
     this.entityManager = EntityManagerProvider.getInstance();
   }
 
 
-  // ------- CRUD METHODS -------
+  // ------- Méthodes CRUD ------- 
   @Override
   public Partie findById(int id) throws DAOException {
     return entityManager.find(Partie.class, new BigDecimal(id));

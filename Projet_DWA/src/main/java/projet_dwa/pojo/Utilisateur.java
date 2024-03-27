@@ -218,5 +218,17 @@ public class Utilisateur {
         this.mdp = mdp;
     }
 
+    // To String
+
+    @Override
+    public String toString() {
+        return "Utilisateur [id=" + id + ", pseudo=" + pseudo + ", mdp=" + mdp + ", age=" + age + ", genre=" + genre
+                + ", connecte=" + connecte + ", enPartie=" + enPartie + ", nbrPartieJouee=" + nbrPartieJouee
+                + ", nbrVictoire=" + nbrVictoire + ", sommeScore=" + sommeScore + ", scoreMoyen=" + scoreMoyen
+                + ", nbrClicsTotal=" + nbrClicsTotal + ", nbrClicsReussis=" + nbrClicsReussis + ", nbrClicsRapides="
+                + nbrClicsRapides + ", ratioClicsReussis=" + ratioClicsReussis + ", ratioClicsRapides="
+                + ratioClicsRapides + "]";
+    }
+
 
 }

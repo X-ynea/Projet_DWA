@@ -1,6 +1,6 @@
 package projet_dwa.dao;
 
-// Type of persistence support for data
+// Type de persistence pour les données
 public enum PersistenceKind {
     JDBC, JPA, XML
 } 

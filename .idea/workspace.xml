@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf0442ed-8956-463c-806b-f99fd6dfb747" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Projet_DWA/src/main/java/projet_dwa/pojo/Partie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_DWA/src/main/java/projet_dwa/pojo/Partie.java" afterDir="false" />
-    </list>
+    <list default="true" id="bf0442ed-8956-463c-806b-f99fd6dfb747" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2eHAB79Y52uiyV9mRKUTSLCKUiI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +32,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -54,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711550994238</updated>
       <workItem from="1711550996464" duration="1889000" />
+      <workItem from="1711554375543" duration="307000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package M1TI.GroupeF.Projet_DWA.entity;
+package projet_dwa.pojo;
 
 import java.util.List;
 

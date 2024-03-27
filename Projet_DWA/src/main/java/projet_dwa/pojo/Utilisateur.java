@@ -1,4 +1,4 @@
-package M1TI.GroupeF.Projet_DWA.entity;
+package projet_dwa.pojo;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -31,6 +31,7 @@ abstract class Utilisateur {
     @Enumerated(EnumType.STRING)   // 0: "masculin", 1: "feminin", 2: "autre"
     @Column(nullable=false)
     private Genre genre;
+    @Column(name="connecte")
     private boolean connecte;
     @Column(name="en_partie")
     private boolean enPartie;

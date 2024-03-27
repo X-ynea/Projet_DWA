@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.util.List;
 import projet_dwa.dao.DAO;
 import projet_dwa.dao.DAOException;
-import projet_dwa.EntityManagerProvider;
 import projet_dwa.pojo.Utilisateur;
+import projet_dwa.EntityManagerProvider;
 
 public class DAO_JPA_Utilisateur extends DAO<Utilisateur> {
 

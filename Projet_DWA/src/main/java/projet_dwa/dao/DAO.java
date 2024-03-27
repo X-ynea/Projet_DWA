@@ -1,6 +1,5 @@
 package projet_dwa.dao;
 
-import jakarta.persistence.EntityManager;
 
 // Generic and abstract DAO class for any type of data
 // <D> : the class parameterizing the DAO

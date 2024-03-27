@@ -1,20 +1,17 @@
-package project_name;
+package projet_dwa;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 
 public final class EntityManagerProvider {
 
   private static EntityManager instance;
   private static EntityManagerFactory factory;
-  private final static String PERSISTANCE_UNIT_NAME = "default";
 
   // Get the entity manager
   public static EntityManager getInstance() {
     // If the factory is not created, create it
     if (factory == null) {
-      factory = Persistence.createEntityManagerFactory(PERSISTANCE_UNIT_NAME);
+      factory = Persistence.createEntityManagerFactory("default");
     }
 
     // If the entity manager is not created, create it
@@ -29,4 +26,6 @@ public final class EntityManagerProvider {
     if (instance.isOpen()) instance.close();
     if (factory.isOpen()) factory.close();
   }
+
+
 }

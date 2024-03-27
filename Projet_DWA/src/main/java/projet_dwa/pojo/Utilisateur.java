@@ -1,26 +1,21 @@
 package projet_dwa.pojo;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
 
 enum Genre {
     MASCULIN, FEMININ, AUTRE
 }
 
 
-@Getter
-@Setter
-@NoArgsConstructor
+
 @Entity
-@Table(name = "Utilisateur")
-@Inheritance(strategy=InheritanceType.JOINED)
-abstract class Utilisateur {
+@Table(name = "utilisateur")
+public class Utilisateur {
     // Attributs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    
     @Column(nullable=false)
     private String pseudo;
     @Column(nullable=false)
@@ -55,8 +50,142 @@ abstract class Utilisateur {
     private double ratioClicsReussis; /*pourcentage du nbrCliccReussis/nbrClicTotal */ 
     @Transient
     private double ratioClicsRapides; /*pourcentage du nbrClicRapides/nbrClicTotal */
-    
-    public Utilisateur(long id, String pseudo, String mdp, int age, Genre genre, boolean connecte, boolean enPartie,
+
+    // Getters et Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
+
+    public boolean isConnecte() {
+        return connecte;
+    }
+
+    public void setConnecte(boolean connecte) {
+        this.connecte = connecte;
+    }
+
+    public boolean isEnPartie() {
+        return enPartie;
+    }
+
+    public void setEnPartie(boolean enPartie) {
+        this.enPartie = enPartie;
+    }
+
+    public int getNbrPartieJouee() {
+        return nbrPartieJouee;
+    }
+
+    public void setNbrPartieJouee(int nbrPartieJouee) {
+        this.nbrPartieJouee = nbrPartieJouee;
+    }
+
+    public int getNbrVictoire() {
+        return nbrVictoire;
+    }
+
+    public void setNbrVictoire(int nbrVictoire) {
+        this.nbrVictoire = nbrVictoire;
+    }
+
+    public int getSommeScore() {
+        return sommeScore;
+    }
+
+    public void setSommeScore(int sommeScore) {
+        this.sommeScore = sommeScore;
+    }
+
+    public double getScoreMoyen() {
+        return scoreMoyen;
+    }
+
+    public void setScoreMoyen(double scoreMoyen) {
+        this.scoreMoyen = scoreMoyen;
+    }
+
+    public int getNbrClicsTotal() {
+        return nbrClicsTotal;
+    }
+
+    public void setNbrClicsTotal(int nbrClicsTotal) {
+        this.nbrClicsTotal = nbrClicsTotal;
+    }
+
+    public int getNbrClicsReussis() {
+        return nbrClicsReussis;
+    }
+
+    public void setNbrClicsReussis(int nbrClicsReussis) {
+        this.nbrClicsReussis = nbrClicsReussis;
+    }
+
+    public int getNbrClicsRapides() {
+        return nbrClicsRapides;
+    }
+
+    public void setNbrClicsRapides(int nbrClicsRapides) {
+        this.nbrClicsRapides = nbrClicsRapides;
+    }
+
+    public double getRatioClicsReussis() {
+        return ratioClicsReussis;
+    }
+
+    public void setRatioClicsReussis(double ratioClicsReussis) {
+        this.ratioClicsReussis = ratioClicsReussis;
+    }
+
+    public double getRatioClicsRapides() {
+        return ratioClicsRapides;
+    }
+
+    public void setRatioClicsRapides(double ratioClicsRapides) {
+        this.ratioClicsRapides = ratioClicsRapides;
+    }
+
+    // Constructeurs 
+
+    public Utilisateur() {
+    }
+
+    public Utilisateur(Long id, String pseudo, String mdp, int age, Genre genre, boolean connecte, boolean enPartie,
             int nbrPartieJouee, int nbrVictoire, int sommeScore, double scoreMoyen, int nbrClicsTotal,
             int nbrClicsReussis, int nbrClicsRapides, double ratioClicsReussis, double ratioClicsRapides) {
         this.id = id;
@@ -77,14 +206,10 @@ abstract class Utilisateur {
         this.ratioClicsRapides = ratioClicsRapides;
     }
 
-    @Override
-    public String toString() {
-        return "Utilisateur [id=" + id + ", pseudo=" + pseudo + ", mdp=" + mdp + ", age=" + age + ", genre=" + genre
-                + ", connecte=" + connecte + ", enPartie=" + enPartie + ", nbrPartieJouee=" + nbrPartieJouee
-                + ", nbrVictoire=" + nbrVictoire + ", sommeScore=" + sommeScore + ", scoreMoyen=" + scoreMoyen
-                + ", nbrClicsTotal=" + nbrClicsTotal + ", nbrClicsReussis=" + nbrClicsReussis + ", nbrClicsRapides="
-                + nbrClicsRapides + ", ratioClicsReussis=" + ratioClicsReussis + ", ratioClicsRapides="
-                + ratioClicsRapides + "]";
+    public Utilisateur(Long id, String pseudo, String mdp) {
+        this.id = id;
+        this.pseudo = pseudo;
+        this.mdp = mdp;
     }
 
 

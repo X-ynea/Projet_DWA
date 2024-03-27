@@ -1,36 +1,31 @@
 package projet_dwa;
 
-import projet_dwa.dao.*;
-import projet_dwa.pojo.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+import projet_dwa.pojo.Utilisateur;
 
 public class Main {
-
     public static void main(String[] args) {
+         // Créer une instance de l'EntityManager
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        
         try {
-          JPA_DAO_Factory jpaDaoFactory = new JPA_DAO_Factory();
-
-          // DAO for the class/table
-          DAO<Utilisateur> daoJpaUtilisateur = jpaDaoFactory.getDAOUtilisateur();
-          DAO<Joueur> daoJpaJoueur = jpaDaoFactory.getDAOJoueur();
-            DAO<Partie> daoJpaPartie = jpaDaoFactory.getDAOPartie();
-
-          // Database content at the beginning
-          Utilisateur[] Utilisateurs = daoJpaUtilisateur.findAll();
-          for (Utilisateur s : Utilisateurs) {
-            System.out.println("code: " + s.getCodeUtilisateur() + "intitule:" + s.getIntitule());
-          }
-
-          // Add a new Utilisateur
-          Utilisateur basket = daoJpaUtilisateur.findById(2);
-          // Print the Utilisateur
-          System.out.println(basket.toString() + "\n");
-          // Delete the Utilisateur
-          daoJpaUtilisateur.delete(basket);
-
-          // Close the connection
-          EntityManagerProvider.close();
-        } catch (DAOException e) {
-          e.printStackTrace();
+            // Tester la connexion en récupérant un enregistrement de la base de données
+            Utilisateur utilisateur = entityManager.find(Utilisateur.class, 1L); // Supposons que 1L est l'ID de l'utilisateur que vous voulez récupérer
+            if (utilisateur != null) {
+                System.out.println("Connexion à la base de données réussie !");
+                System.out.println("Utilisateur trouvé : " + utilisateur);
+            } else {
+                System.out.println("Aucun utilisateur trouvé dans la base de données !");
+            }
+        } catch (Exception e) {
+            System.err.println("Erreur lors de la connexion à la base de données : " + e.getMessage());
+        } finally {
+            // Fermer l'EntityManager
+            entityManager.close();
+            entityManagerFactory.close();
         }
     }
 }

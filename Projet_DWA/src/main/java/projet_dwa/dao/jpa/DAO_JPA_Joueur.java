@@ -4,9 +4,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import java.math.BigDecimal;
 import java.util.List;
+import projet_dwa.EntityManagerProvider;
 import projet_dwa.dao.DAO;
 import projet_dwa.dao.DAOException;
-import projet_dwa.EntityManagerProvider;
 import projet_dwa.pojo.Joueur;
 
 public class DAO_JPA_Joueur extends DAO<Joueur> {

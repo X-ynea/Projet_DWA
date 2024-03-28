@@ -19,16 +19,17 @@ public class Joueur{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "score_partie")
-    private int score_partie;
-
     @OneToOne
     @JoinColumn(name = "utilisateur_id")
-    private Utilisateur utilisateur_id;
+    private Utilisateur utilisateurId;
 
     @ManyToOne
     @JoinColumn(name = "partie_id")
-    private Partie partie_id;
+    private Partie partieId;
+
+    @Column(name = "score_partie")
+    private int scorePartie;
+
 
     // Getters et Setters
     public long getId() {
@@ -40,27 +41,27 @@ public class Joueur{
     }
 
     public int getScorePartie() {
-        return score_partie;
+        return scorePartie;
     }
 
     public void setScorePartie(int scorePartie) {
-        this.score_partie = scorePartie;
+        this.scorePartie = scorePartie;
     }
 
-    public Utilisateur getUtilisateur_id() {
-        return utilisateur_id;
+    public Utilisateur getUtilisateurId() {
+        return utilisateurId;
     }
 
-    public void setUtilisateur_id(Utilisateur utilisateur_id) {
-        this.utilisateur_id = utilisateur_id;
+    public void setUtilisateurId(Utilisateur utilisateur_id) {
+        this.utilisateurId = utilisateur_id;
     }
 
-    public Partie getPartie_id() {
-        return partie_id;
+    public Partie getPartieId() {
+        return partieId;
     }
 
-    public void setPartie_id(Partie partie_id) {
-        this.partie_id = partie_id;
+    public void setPartieId(Partie partie_id) {
+        this.partieId = partie_id;
     }
 
     // Constructeurs 
@@ -68,11 +69,11 @@ public class Joueur{
     public Joueur() {
     }
 
-    public Joueur(long id, int score_partie, Utilisateur utilisateur_id, Partie partie_id) {
+    public Joueur(long id, int score_partie, Utilisateur utilisateur_id, Partie partieId) {
         this.id = id;
-        this.score_partie = score_partie;
-        this.utilisateur_id = utilisateur_id;
-        this.partie_id = partie_id;
+        this.scorePartie = score_partie;
+        this.utilisateurId = utilisateur_id;
+        this.partieId = partieId;
     }
 
     public Joueur(long id) {
@@ -82,8 +83,8 @@ public class Joueur{
     // To string 
     @Override
     public String toString() {
-        return "Joueur [id=" + id + ", score_partie=" + score_partie + ", utilisateur_id=" + utilisateur_id
-                + ", partie_id=" + partie_id + "]";
+        return "Joueur [id=" + id + ", score_partie=" + scorePartie + ", utilisateur_id=" + utilisateurId
+                + ", partie_id=" + partieId + "]";
     }
 
     

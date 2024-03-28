@@ -37,8 +37,8 @@ public class Utilisateur {
     @Column(name="en_partie")
     private boolean enPartie;
 
-    @Column(name="nbr_partie_jouee")
-    private int nbrPartieJouee;
+    @Column(name="nbr_parties_jouees")
+    private int nbrPartiesJouees;
     @Column(name="nbr_victoire")
     private int nbrVictoire;
     @Column(name="somme_score")
@@ -114,12 +114,12 @@ public class Utilisateur {
         this.enPartie = enPartie;
     }
 
-    public int getNbrPartieJouee() {
-        return nbrPartieJouee;
+    public int getNbrPartiesJouees() {
+        return nbrPartiesJouees;
     }
 
-    public void setNbrPartieJouee(int nbrPartieJouee) {
-        this.nbrPartieJouee = nbrPartieJouee;
+    public void setNbrPartiesJouees(int nbrPartieJouee) {
+        this.nbrPartiesJouees = nbrPartieJouee;
     }
 
     public int getNbrVictoire() {
@@ -192,8 +192,8 @@ public class Utilisateur {
     }
 
     public Utilisateur(Long id, String pseudo, String mdp, int age, Genre genre, boolean connecte, boolean enPartie,
-            int nbrPartieJouee, int nbrVictoire, int sommeScore, double scoreMoyen, int nbrClicsTotal,
-            int nbrClicsReussis, int nbrClicsRapides, double ratioClicsReussis, double ratioClicsRapides) {
+                       int nbrPartiesJouees, int nbrVictoire, int sommeScore, double scoreMoyen, int nbrClicsTotal,
+                       int nbrClicsReussis, int nbrClicsRapides, double ratioClicsReussis, double ratioClicsRapides) {
         this.id = id;
         this.pseudo = pseudo;
         this.mdp = mdp;
@@ -201,7 +201,7 @@ public class Utilisateur {
         this.genre = genre;
         this.connecte = connecte;
         this.enPartie = enPartie;
-        this.nbrPartieJouee = nbrPartieJouee;
+        this.nbrPartiesJouees = nbrPartiesJouees;
         this.nbrVictoire = nbrVictoire;
         this.sommeScore = sommeScore;
         this.scoreMoyen = scoreMoyen;
@@ -223,7 +223,7 @@ public class Utilisateur {
     @Override
     public String toString() {
         return "Utilisateur [id=" + id + ", pseudo=" + pseudo + ", mdp=" + mdp + ", age=" + age + ", genre=" + genre
-                + ", connecte=" + connecte + ", enPartie=" + enPartie + ", nbrPartieJouee=" + nbrPartieJouee
+                + ", connecte=" + connecte + ", enPartie=" + enPartie + ", nbrPartieJouee=" + nbrPartiesJouees
                 + ", nbrVictoire=" + nbrVictoire + ", sommeScore=" + sommeScore + ", scoreMoyen=" + scoreMoyen
                 + ", nbrClicsTotal=" + nbrClicsTotal + ", nbrClicsReussis=" + nbrClicsReussis + ", nbrClicsRapides="
                 + nbrClicsRapides + ", ratioClicsReussis=" + ratioClicsReussis + ", ratioClicsRapides="

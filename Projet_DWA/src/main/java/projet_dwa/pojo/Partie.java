@@ -28,13 +28,13 @@ public class Partie {
     // Attributs 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codePartie;
+    private Long id;
 
     @OneToOne
     @JoinColumn(name = "createur")
     private Utilisateur createur;
 
-    @OneToMany(mappedBy = "partie_id", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "partieId", cascade = CascadeType.ALL)
     private List<Joueur> joueurs;
     
     // Paramètres de création de la partie
@@ -63,11 +63,11 @@ public class Partie {
 
     
     // Getters et Setters
-    public Long getCodePartie() {
-        return codePartie;
+    public Long getId() {
+        return id;
     }
-    public void setCodePartie(Long codePartie) {
-        this.codePartie = codePartie;
+    public void setId(Long codePartie) {
+        this.id = codePartie;
     }
     public Utilisateur getCreateur() {
         return createur;
@@ -134,14 +134,14 @@ public class Partie {
 
     public Partie() {
     }
-    public Partie(Long codePartie, Utilisateur createur, List<Joueur> joueurs) {
-        this.codePartie = codePartie;
+    public Partie(Long id, Utilisateur createur, List<Joueur> joueurs) {
+        this.id = id;
         this.createur = createur;
         this.joueurs = joueurs;
     }
-    public Partie(Long codePartie, Utilisateur createur, List<Joueur> joueurs, int nbrCouleur, int nbrNombre, int timer,
-            int nbrTour, Difficulte difficulte, Statut statut, int totalClicsReussis, int totalClicsRapides) {
-        this.codePartie = codePartie;
+    public Partie(Long id, Utilisateur createur, List<Joueur> joueurs, int nbrCouleur, int nbrNombre, int timer,
+                  int nbrTour, Difficulte difficulte, Statut statut, int totalClicsReussis, int totalClicsRapides) {
+        this.id = id;
         this.createur = createur;
         this.joueurs = joueurs;
         this.nbrCouleur = nbrCouleur;
@@ -158,7 +158,7 @@ public class Partie {
 
     @Override
     public String toString() {
-        return "Partie [codePartie=" + codePartie + ", createur=" + createur + ", joueurs=" + joueurs + ", nbrCouleur="
+        return "Partie [codePartie=" + id + ", createur=" + createur + ", joueurs=" + joueurs + ", nbrCouleur="
                 + nbrCouleur + ", nbrNombre=" + nbrNombre + ", timer=" + timer + ", nbrTour=" + nbrTour
                 + ", difficulte=" + difficulte + ", statut=" + statut + ", totalClicsReussis=" + totalClicsReussis
                 + ", totalClicsRapides=" + totalClicsRapides + "]";
